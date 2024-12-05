@@ -26,8 +26,18 @@ public class Window extends JFrame{
         JTextField out = new JTextField();
         out.setEditable(false);
         panel.add(out);
+        Color blue = Color.decode("0x338ede");
+        Color purple = Color.decode("0xa633d6");
+        Color white = Color.decode("0xffffff");
+        Color black = Color.decode("0x000000");
+        out.setBackground(purple);
+        out.setForeground(white);
+        dbhL.setForeground(black);
+        dbL.setForeground(black);
+        $$L.setForeground(black);
+        in.setBackground(blue);
         add(panel);
-        setSize(700,200);
+        setSize(600,175);
         dbh.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 out.setText(recalculate());
@@ -58,6 +68,6 @@ public class Window extends JFrame{
         double hours = DB/DBH;
         double rate = dollars/hours;
         DecimalFormat format = new DecimalFormat("#.##");
-        return format.format(rate);
+        return format.format(rate) + "$/hr";
     }
 }
