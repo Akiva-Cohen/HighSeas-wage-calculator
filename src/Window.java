@@ -33,6 +33,16 @@ public class Window extends JFrame{
                 out.setText(recalculate());
             }
         });
+        db.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                out.setText(recalculate());
+            }
+        });
+        $$.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                out.setText(recalculate());
+            }
+        });
     }
     public String recalculate() {
         double DBH;
