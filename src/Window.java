@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 public class Window extends JFrame{
     JTextField dbh;
@@ -38,18 +36,18 @@ public class Window extends JFrame{
         in.setBackground(blue);
         add(panel);
         setSize(600,175);
-        dbh.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        dbh.getDocument().addDocumentListener(new DListen() {
+            public void update() {
                 out.setText(recalculate());
             }
         });
-        db.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        db.getDocument().addDocumentListener(new DListen() {
+            public void update() {
                 out.setText(recalculate());
             }
         });
-        $$.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        $$.getDocument().addDocumentListener(new DListen() {
+            public void update() {
                 out.setText(recalculate());
             }
         });
