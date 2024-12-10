@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>HighSeas Calculator</title>
+        <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
+    </head>
+    <body>
+        <script>
+            (async function () {
+                await cheerpjInit();
+                cheerpjCreateDisplay(window.innerWidth, window.innerHeight);
+                await cheerpjRunJar("/app/HighSeas!.jar");
+            });
+        </script>
+    </body>
+</html>
